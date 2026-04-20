@@ -1,16 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { StickyMobileCTA } from "@/components/StickyMobileCTA";
+import { Hero } from "@/components/sections/Hero";
+import { StatsBand } from "@/components/sections/StatsBand";
+import { Services } from "@/components/sections/Services";
+import { Industries } from "@/components/sections/Industries";
+import { Process } from "@/components/sections/Process";
+import { WhyUs } from "@/components/sections/WhyUs";
+import { Testimonial } from "@/components/sections/Testimonial";
+import { BlogTeaser } from "@/components/sections/BlogTeaser";
+import { FinalCTA } from "@/components/sections/FinalCTA";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <StatsBand />
+        <Services />
+        <Industries />
+        <Process />
+        <WhyUs />
+        <Testimonial />
+        <BlogTeaser />
+        <FinalCTA />
+      </main>
+      <Footer />
+      <StickyMobileCTA />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
