@@ -24,7 +24,7 @@ const Contact = () => {
             {[
               { icon: MapPin, label: "Visit", value: "Hyderabad, Telangana" },
               { icon: Phone, label: "Call", value: "+91 86886 54432", href: "tel:+918688654432" },
-              { icon: Mail, label: "Email", value: "hello@adtune.in", href: "mailto:hello@adtune.in" },
+              { icon: Mail, label: "Email", value: "contact@adtunedigital.in", href: "mailto:contact@adtunedigital.in" },
               { icon: Clock, label: "Hours", value: "Mon–Fri, 10–6" },
             ].map((c) => (
               <a key={c.label} href={c.href ?? "#"} className="surface-card block p-5 text-left">
@@ -46,7 +46,7 @@ const Contact = () => {
                   <div className="text-xs text-muted-foreground">Faster replies for quick questions</div>
                 </div>
               </div>
-              <span className="text-sm text-primary-glow">Chat now →</span>
+              <span className="text-sm text-primary-glow">Chat with us →</span>
             </a>
           </div>
         </section>

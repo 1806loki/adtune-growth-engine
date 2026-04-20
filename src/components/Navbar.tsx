@@ -1,20 +1,29 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/adtune-logo.jpg";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/#services" },
   { label: "Process", href: "/#process" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
+const serviceLinks = [
+  { label: "Web Development", href: "/services/web-development" },
+  { label: "SEO", href: "/services/seo" },
+  { label: "Performance Marketing", href: "/services/performance-marketing" },
+  { label: "Social Media Marketing", href: "/services/social-media-marketing" },
+];
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [servicesOpenMobile, setServicesOpenMobile] = useState(false);
+  const [servicesOpenDesktop, setServicesOpenDesktop] = useState(false);
+  const [closeTimer, setCloseTimer] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
 
@@ -25,7 +34,29 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setOpen(false); }, [pathname]);
+  useEffect(() => {
+    setOpen(false);
+    setServicesOpenMobile(false);
+    setServicesOpenDesktop(false);
+  }, [pathname]);
+
+  const clearCloseTimer = () => {
+    if (closeTimer) {
+      window.clearTimeout(closeTimer);
+      setCloseTimer(null);
+    }
+  };
+
+  const openDesktopServices = () => {
+    clearCloseTimer();
+    setServicesOpenDesktop(true);
+  };
+
+  const closeDesktopServices = () => {
+    clearCloseTimer();
+    const timer = window.setTimeout(() => setServicesOpenDesktop(false), 140);
+    setCloseTimer(timer);
+  };
 
   return (
     <header
@@ -51,6 +82,33 @@ export function Navbar() {
           </Link>
 
           <ul className="hidden items-center gap-1 md:flex">
+            <li className="relative" onMouseEnter={openDesktopServices} onMouseLeave={closeDesktopServices}>
+              <Link
+                to="/#services"
+                className="flex items-center gap-1 rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Services <ChevronDown className="h-4 w-4" />
+              </Link>
+              <div className="absolute left-0 top-full z-50 w-64 pt-2">
+                <div
+                  className={cn(
+                    "rounded-2xl border border-border bg-surface/95 p-2 shadow-elevated backdrop-blur-xl transition-all duration-200",
+                    servicesOpenDesktop ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
+                  )}
+                >
+                  {serviceLinks.map((service) => (
+                    <Link
+                      key={service.href}
+                      to={service.href}
+                      className="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm text-foreground transition-colors hover:bg-accent/40"
+                    >
+                      {service.label}
+                      <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </li>
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
@@ -65,7 +123,7 @@ export function Navbar() {
 
           <div className="hidden md:block">
             <Button asChild variant="hero" size="default">
-              <Link to="/contact">
+              <Link to="/#contact">
                 Book free call <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
@@ -89,6 +147,33 @@ export function Navbar() {
         )}
       >
         <ul className="flex flex-col gap-1 p-3">
+          <li>
+            <button
+              type="button"
+              onClick={() => setServicesOpenMobile((prev) => !prev)}
+              className="flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-left text-base text-foreground transition-colors hover:bg-accent/40"
+            >
+              Services
+              {servicesOpenMobile ? (
+                <ChevronUp className="h-4 w-4 text-muted-foreground" />
+              ) : (
+                <ChevronDown className="h-4 w-4 text-muted-foreground" />
+              )}
+            </button>
+          </li>
+          {servicesOpenMobile
+            ? serviceLinks.map((service) => (
+                <li key={service.href}>
+                  <Link
+                    to={service.href}
+                    className="flex items-center justify-between rounded-xl px-4 py-3 text-sm text-muted-foreground transition-colors hover:bg-accent/40 hover:text-foreground"
+                  >
+                    {service.label}
+                    <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                  </Link>
+                </li>
+              ))
+            : null}
           {navItems.map((item) => (
             <li key={item.href}>
               <Link
@@ -102,7 +187,7 @@ export function Navbar() {
           ))}
           <li className="px-2 pb-2 pt-3">
             <Button asChild variant="hero" size="lg" className="w-full">
-              <Link to="/contact">Book free call</Link>
+              <Link to="/#contact">Book free call</Link>
             </Button>
           </li>
         </ul>

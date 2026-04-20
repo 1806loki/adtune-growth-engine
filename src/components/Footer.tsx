@@ -29,10 +29,10 @@ export function Footer() {
           <div>
             <div className="mb-4 text-xs tracking-caps text-muted-foreground">Services</div>
             <ul className="space-y-2.5 text-sm">
-              <li><a href="/#services" className="hover:text-primary-glow transition-colors">Web development</a></li>
-              <li><a href="/#services" className="hover:text-primary-glow transition-colors">SEO</a></li>
-              <li><a href="/#services" className="hover:text-primary-glow transition-colors">Performance marketing</a></li>
-              <li><a href="/#services" className="hover:text-primary-glow transition-colors">Social media</a></li>
+              <li><Link to="/services/web-development" className="hover:text-primary-glow transition-colors">Web development</Link></li>
+              <li><Link to="/services/seo" className="hover:text-primary-glow transition-colors">SEO</Link></li>
+              <li><Link to="/services/performance-marketing" className="hover:text-primary-glow transition-colors">Performance marketing</Link></li>
+              <li><Link to="/services/social-media-marketing" className="hover:text-primary-glow transition-colors">Social media marketing</Link></li>
             </ul>
           </div>
 
@@ -50,7 +50,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2.5"><MapPin className="mt-0.5 h-4 w-4 text-primary-glow shrink-0" /> Hyderabad, Telangana</li>
               <li className="flex items-start gap-2.5"><Phone className="mt-0.5 h-4 w-4 text-primary-glow shrink-0" /> +91 86886 54432</li>
-              <li className="flex items-start gap-2.5"><Mail className="mt-0.5 h-4 w-4 text-primary-glow shrink-0" /> hello@adtune.in</li>
+              <li className="flex items-start gap-2.5"><Mail className="mt-0.5 h-4 w-4 text-primary-glow shrink-0" /> contact@adtunedigital.in</li>
               <li className="flex items-start gap-2.5"><Clock className="mt-0.5 h-4 w-4 text-primary-glow shrink-0" /> Mon–Fri, 10 AM – 6 PM</li>
             </ul>
           </div>

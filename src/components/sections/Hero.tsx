@@ -35,7 +35,7 @@ export function Hero() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row animate-fade-up" style={{ animationDelay: "300ms", opacity: 0 }}>
             <Button asChild variant="hero" size="xl" className="w-full sm:w-auto">
-              <Link to="/contact">
+              <Link to="/#contact">
                 Get a free call <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>

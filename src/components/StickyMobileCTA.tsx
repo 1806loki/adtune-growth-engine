@@ -20,7 +20,7 @@ export function StickyMobileCTA() {
     >
       <div className="flex items-center gap-2 rounded-full border border-border-strong bg-surface/90 p-1.5 shadow-elevated backdrop-blur-xl">
         <Link
-          to="/contact"
+          to="/#contact"
           className="flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-gradient-primary text-sm font-medium text-primary-foreground"
         >
           <Phone className="h-4 w-4" /> Book free call

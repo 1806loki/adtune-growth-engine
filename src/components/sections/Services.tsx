@@ -1,26 +1,31 @@
 import { ArrowUpRight, Globe, Search, BarChart3, Share2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
     icon: Globe,
+    slug: "web-development",
     title: "Web development",
     desc: "Fast, mobile-first, SEO-ready websites that make powerful first impressions and convert visitors into customers.",
     chips: ["Custom design", "Landing pages", "E-commerce"],
   },
   {
     icon: Search,
+    slug: "seo",
     title: "Search engine optimization",
     desc: "Get found on Google with proven SEO strategies that drive sustainable organic traffic and high-quality leads month after month.",
     chips: ["On-page SEO", "Local SEO", "Link building"],
   },
   {
     icon: BarChart3,
+    slug: "performance-marketing",
     title: "Performance marketing",
     desc: "Google Ads, Meta Ads, and full-funnel paid campaigns where every rupee is tracked and every campaign is optimized for real ROI.",
     chips: ["Google Ads", "Meta Ads", "Retargeting"],
   },
   {
     icon: Share2,
+    slug: "social-media-marketing",
     title: "Social media marketing",
     desc: "Creative content, consistent posting, and smart paid social that grows your audience and builds a brand people trust and buy from.",
     chips: ["Instagram", "Facebook", "LinkedIn"],
@@ -43,7 +48,11 @@ export function Services() {
 
         <div className="mt-14 grid gap-4 md:mt-20 md:grid-cols-2 md:gap-6">
           {services.map((s) => (
-            <article key={s.title} className="surface-card group relative overflow-hidden p-6 md:p-8">
+            <Link
+              key={s.title}
+              to={`/services/${s.slug}`}
+              className="surface-card group relative overflow-hidden p-6 transition-transform duration-300 hover:-translate-y-0.5 md:p-8"
+            >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/60 text-primary-glow ring-1 ring-border-strong">
                   <s.icon className="h-5 w-5" />
@@ -60,7 +69,7 @@ export function Services() {
                 ))}
               </div>
               <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-primary/10 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-            </article>
+            </Link>
           ))}
         </div>
       </div>
