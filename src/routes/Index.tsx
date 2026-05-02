@@ -8,7 +8,6 @@ import { Industries } from "@/features/marketing/components/sections/Industries"
 import { Process } from "@/features/marketing/components/sections/Process";
 import { WhyUs } from "@/features/marketing/components/sections/WhyUs";
 import { Testimonial } from "@/features/marketing/components/sections/Testimonial";
-import { BlogTeaser } from "@/features/marketing/components/sections/BlogTeaser";
 import { FinalCTA } from "@/features/marketing/components/sections/FinalCTA";
 import { SeoMeta } from "@/features/marketing/components/layout/SeoMeta";
 
@@ -36,7 +35,6 @@ const Index = () => {
         <Process />
         <WhyUs />
         <Testimonial />
-        <BlogTeaser />
         <FinalCTA />
       </main>
       <Footer />
