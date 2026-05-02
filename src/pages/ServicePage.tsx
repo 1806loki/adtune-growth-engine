@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { SeoMeta } from "@/components/SeoMeta";
 import { getServiceBySlug } from "@/data/services";
 import NotFound from "./NotFound";
 
@@ -20,6 +21,11 @@ const ServicePage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta
+        title={service.metaTitle}
+        description={service.metaDescription}
+        keywords={service.metaKeywords}
+      />
       <Navbar />
       <main>
         <section className="relative overflow-hidden pb-20 pt-32 md:pb-24 md:pt-40">

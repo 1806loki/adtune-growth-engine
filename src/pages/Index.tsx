@@ -10,10 +10,23 @@ import { WhyUs } from "@/components/sections/WhyUs";
 import { Testimonial } from "@/components/sections/Testimonial";
 import { BlogTeaser } from "@/components/sections/BlogTeaser";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { SeoMeta } from "@/components/SeoMeta";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta
+        title="Digital Marketing Agency in Hyderabad | AdTune Digital"
+        description="AdTune Digital is a leading digital marketing agency in Hyderabad offering SEO, Google Ads, social media and web development to drive real business growth."
+        keywords={[
+          "Digital Marketing Agency in Hyderabad",
+          "SEO services in Hyderabad",
+          "online marketing services",
+          "performance marketing agency",
+          "social media marketing company",
+          "website development services",
+        ]}
+      />
       <Navbar />
       <main>
         <Hero />

@@ -29,8 +29,9 @@ export function Hero() {
           </h1>
 
           <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up" style={{ animationDelay: "180ms", opacity: 0 }}>
-            A full-service digital marketing agency building websites, SEO, paid ads,
-            and social that actually move the numbers that matter.
+            AdTune Digital Services is a digital marketing agency in Hyderabad helping businesses
+            across India build a powerful online presence with custom websites, result-driven SEO,
+            high-ROI performance marketing, and social media strategies that actually work.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row animate-fade-up" style={{ animationDelay: "300ms", opacity: 0 }}>

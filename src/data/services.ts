@@ -22,6 +22,9 @@ export type ServiceDetail = {
   faqs: ServiceFAQ[];
   ctaTitle: string;
   ctaDescription: string;
+  metaTitle: string;
+  metaDescription: string;
+  metaKeywords: string[];
 };
 
 export const services: ServiceDetail[] = [
@@ -101,6 +104,17 @@ export const services: ServiceDetail[] = [
     ],
     ctaTitle: "Ready to build your website?",
     ctaDescription: "Get a free consultation with AdTune Digital Services today.",
+    metaTitle: "Website Development Services in Hyderabad | AdTune Digital",
+    metaDescription:
+      "Get high-converting website development services in Hyderabad. We build SEO-ready, fast, mobile-first websites designed to grow your business.",
+    metaKeywords: [
+      "Website Development Services in Hyderabad",
+      "custom website design",
+      "responsive web development",
+      "SEO-friendly websites",
+      "e-commerce website development",
+      "landing page design services",
+    ],
   },
   {
     slug: "seo",
@@ -179,6 +193,17 @@ export const services: ServiceDetail[] = [
     ],
     ctaTitle: "Want to rank higher on Google?",
     ctaDescription: "Get a free SEO audit from AdTune Digital Services.",
+    metaTitle: "SEO Services in Hyderabad | Rank Higher with AdTune",
+    metaDescription:
+      "Boost rankings with expert SEO services in Hyderabad. Get technical SEO, local SEO, and link building strategies that drive traffic and leads.",
+    metaKeywords: [
+      "SEO Services in Hyderabad",
+      "technical SEO audit",
+      "on-page SEO optimization",
+      "local SEO services",
+      "link building services",
+      "SEO content strategy",
+    ],
   },
   {
     slug: "performance-marketing",
@@ -253,6 +278,17 @@ export const services: ServiceDetail[] = [
     ],
     ctaTitle: "Ready to make your ad spend work harder?",
     ctaDescription: "Get a free campaign audit from AdTune Digital Services.",
+    metaTitle: "Performance Marketing Services in Hyderabad | AdTune",
+    metaDescription:
+      "Maximize ROI with performance marketing services in Hyderabad. Get Google Ads, Meta Ads, and data-driven campaigns that generate real leads.",
+    metaKeywords: [
+      "Performance Marketing Services in Hyderabad",
+      "Google Ads management",
+      "Meta Ads services",
+      "PPC advertising services",
+      "conversion rate optimization",
+      "retargeting campaigns",
+    ],
   },
   {
     slug: "social-media-marketing",
@@ -332,6 +368,17 @@ export const services: ServiceDetail[] = [
     ],
     ctaTitle: "Ready to grow on social media?",
     ctaDescription: "Get a free social media audit from AdTune Digital Services.",
+    metaTitle: "Social Media Marketing Services in Hyderabad | AdTune",
+    metaDescription:
+      "Grow your brand with social media marketing services in Hyderabad. Get content creation, paid ads and engagement strategies that drive real results.",
+    metaKeywords: [
+      "Social Media Marketing Services in Hyderabad",
+      "social media strategy",
+      "content creation services",
+      "community management services",
+      "paid social media advertising",
+      "social media analytics reporting",
+    ],
   },
 ];
 
