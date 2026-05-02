@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const HeroMesh = lazy(() => import("@/components/HeroMesh").then((m) => ({ default: m.HeroMesh })));
+const HeroMesh = lazy(() => import("./HeroMesh").then((m) => ({ default: m.HeroMesh })));
 
 export function Hero() {
   return (
