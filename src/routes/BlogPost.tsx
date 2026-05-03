@@ -1,9 +1,9 @@
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { StickyMobileCTA } from "@/components/StickyMobileCTA";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { Navbar } from "@/features/marketing/components/layout/Navbar";
+import { Footer } from "@/features/marketing/components/layout/Footer";
+import { StickyMobileCTA } from "@/features/marketing/components/layout/StickyMobileCTA";
+import { FinalCTA } from "@/features/marketing/components/sections/FinalCTA";
 
 const BlogPost = () => {
   const { slug } = useParams();

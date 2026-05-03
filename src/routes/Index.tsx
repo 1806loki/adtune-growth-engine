@@ -1,16 +1,15 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { StickyMobileCTA } from "@/components/StickyMobileCTA";
-import { Hero } from "@/components/sections/Hero";
-import { StatsBand } from "@/components/sections/StatsBand";
-import { Services } from "@/components/sections/Services";
-import { Industries } from "@/components/sections/Industries";
-import { Process } from "@/components/sections/Process";
-import { WhyUs } from "@/components/sections/WhyUs";
-import { Testimonial } from "@/components/sections/Testimonial";
-import { BlogTeaser } from "@/components/sections/BlogTeaser";
-import { FinalCTA } from "@/components/sections/FinalCTA";
-import { SeoMeta } from "@/components/SeoMeta";
+import { Navbar } from "@/features/marketing/components/layout/Navbar";
+import { Footer } from "@/features/marketing/components/layout/Footer";
+import { StickyMobileCTA } from "@/features/marketing/components/layout/StickyMobileCTA";
+import { Hero } from "@/features/marketing/components/sections/Hero";
+import { StatsBand } from "@/features/marketing/components/sections/StatsBand";
+import { Services } from "@/features/marketing/components/sections/Services";
+import { Industries } from "@/features/marketing/components/sections/Industries";
+import { Process } from "@/features/marketing/components/sections/Process";
+import { WhyUs } from "@/features/marketing/components/sections/WhyUs";
+import { Testimonial } from "@/features/marketing/components/sections/Testimonial";
+import { FinalCTA } from "@/features/marketing/components/sections/FinalCTA";
+import { SeoMeta } from "@/features/marketing/components/layout/SeoMeta";
 
 const Index = () => {
   return (
@@ -36,7 +35,6 @@ const Index = () => {
         <Process />
         <WhyUs />
         <Testimonial />
-        <BlogTeaser />
         <FinalCTA />
       </main>
       <Footer />

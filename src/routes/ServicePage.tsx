@@ -1,11 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { StickyMobileCTA } from "@/components/StickyMobileCTA";
+import { Navbar } from "@/features/marketing/components/layout/Navbar";
+import { Footer } from "@/features/marketing/components/layout/Footer";
+import { StickyMobileCTA } from "@/features/marketing/components/layout/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { SeoMeta } from "@/components/SeoMeta";
+import { SeoMeta } from "@/features/marketing/components/layout/SeoMeta";
 import { getServiceBySlug } from "@/data/services";
 import NotFound from "./NotFound";
 

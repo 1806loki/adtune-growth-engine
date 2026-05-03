@@ -39,9 +39,7 @@ export function Footer() {
           <div>
             <div className="mb-4 text-xs tracking-caps text-muted-foreground">Company</div>
             <ul className="space-y-2.5 text-sm">
-              <li><Link to="/blog" className="hover:text-primary-glow transition-colors">Blog</Link></li>
               <li><Link to="/contact" className="hover:text-primary-glow transition-colors">Contact</Link></li>
-              <li><Link to="/admin" className="hover:text-primary-glow transition-colors">Admin</Link></li>
             </ul>
           </div>
 

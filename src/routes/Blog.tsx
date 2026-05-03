@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { StickyMobileCTA } from "@/components/StickyMobileCTA";
-import { mockBlogs } from "@/components/sections/BlogTeaser";
+import { Navbar } from "@/features/marketing/components/layout/Navbar";
+import { Footer } from "@/features/marketing/components/layout/Footer";
+import { StickyMobileCTA } from "@/features/marketing/components/layout/StickyMobileCTA";
+import { mockBlogs } from "@/features/marketing/components/sections/BlogTeaser";
 
 const allPosts = [
   ...mockBlogs,

@@ -1,7 +1,7 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { StickyMobileCTA } from "@/components/StickyMobileCTA";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { Navbar } from "@/features/marketing/components/layout/Navbar";
+import { Footer } from "@/features/marketing/components/layout/Footer";
+import { StickyMobileCTA } from "@/features/marketing/components/layout/StickyMobileCTA";
+import { FinalCTA } from "@/features/marketing/components/sections/FinalCTA";
 import { MapPin, Mail, Phone, Clock, MessageCircle } from "lucide-react";
 
 const Contact = () => {
