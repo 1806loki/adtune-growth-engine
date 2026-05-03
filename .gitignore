@@ -12,6 +12,20 @@ dist
 dist-ssr
 *.local
 
+# Secrets and local env (keep .env.example / .env.sample committed if you use them)
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Tooling / test outputs
+coverage
+*.tsbuildinfo
+.eslintcache
+
+# Vercel CLI project link (secrets not in repo, but avoids noisy local config)
+.vercel
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
