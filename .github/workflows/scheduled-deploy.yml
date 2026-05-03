@@ -2,8 +2,8 @@ name: One-Time Vercel Deploy
 
 on:
   schedule:
-    # May 3, 23:30 IST → 18:00 UTC (GitHub Actions cron is UTC only)
-    - cron: '0 18 3 5 *'
+    # May 3, 23:35 IST → 18:00 UTC (GitHub Actions cron is UTC only)
+    - cron: '05 18 3 5 *'
   workflow_dispatch:
 
 jobs:
