@@ -5,6 +5,8 @@ type SeoMetaProps = {
   title: string;
   description: string;
   keywords?: string[];
+  image?: string;
+  author?: string;
 };
 
 const SITE_URL = "https://adtunedigital.in";
@@ -29,7 +31,7 @@ const ensureCanonical = () => {
   return link;
 };
 
-export function SeoMeta({ title, description, keywords = [] }: SeoMetaProps) {
+export function SeoMeta({ title, description, keywords = [], image, author }: SeoMetaProps) {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -39,18 +41,54 @@ export function SeoMeta({ title, description, keywords = [] }: SeoMetaProps) {
     if (keywords.length) {
       ensureMetaTag("name", "keywords").setAttribute("content", keywords.join(", "));
     }
+    if (author) {
+      ensureMetaTag("name", "author").setAttribute("content", author);
+    }
+    ensureMetaTag("name", "robots").setAttribute("content", "index, follow");
 
+    const ogImage = image || "/adtune-logo.jpg"; // Default image
     ensureMetaTag("property", "og:title").setAttribute("content", title);
     ensureMetaTag("property", "og:description").setAttribute("content", description);
     ensureMetaTag("property", "og:type").setAttribute("content", "website");
     ensureMetaTag("property", "og:url").setAttribute("content", `${SITE_URL}${pathname}`);
+    ensureMetaTag("property", "og:image").setAttribute("content", `${SITE_URL}${ogImage}`);
 
     ensureMetaTag("name", "twitter:card").setAttribute("content", "summary_large_image");
     ensureMetaTag("name", "twitter:title").setAttribute("content", title);
     ensureMetaTag("name", "twitter:description").setAttribute("content", description);
+    ensureMetaTag("name", "twitter:image").setAttribute("content", `${SITE_URL}${ogImage}`);
 
     ensureCanonical().setAttribute("href", `${SITE_URL}${pathname}`);
-  }, [description, keywords, pathname, title]);
+
+    // Add structured data for LocalBusiness (commented out until added to Google My Business)
+    /*
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "AdTune Digital",
+      "description": description,
+      "url": SITE_URL,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressCountry": "IN"
+      },
+      "telephone": "+91 86886 54432",
+      "email": "contact@adtunedigital.in",
+      "sameAs": [
+        "https://www.linkedin.com/company/adtune-digital"
+      ]
+    };
+
+    let script = document.head.querySelector<HTMLScriptElement>('script[type="application/ld+json"]');
+    if (!script) {
+      script = document.createElement("script");
+      script.type = "application/ld+json";
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(structuredData);
+    */
+  }, [description, keywords, pathname, title, image, author]);
 
   return null;
 }

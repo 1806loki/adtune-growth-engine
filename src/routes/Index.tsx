@@ -2,10 +2,12 @@ import { Navbar } from "@/features/marketing/components/layout/Navbar";
 import { Footer } from "@/features/marketing/components/layout/Footer";
 import { StickyMobileCTA } from "@/features/marketing/components/layout/StickyMobileCTA";
 import { Hero } from "@/features/marketing/components/sections/Hero";
+import { TestimonialSection } from "@/components/testimonials/TestimonialSection";
 import { StatsBand } from "@/features/marketing/components/sections/StatsBand";
 import { Services } from "@/features/marketing/components/sections/Services";
 import { Industries } from "@/features/marketing/components/sections/Industries";
 import { Process } from "@/features/marketing/components/sections/Process";
+import { ProcessReinforcement } from "@/components/testimonials/ProcessReinforcement";
 import { WhyUs } from "@/features/marketing/components/sections/WhyUs";
 import { Testimonial } from "@/features/marketing/components/sections/Testimonial";
 import { FinalCTA } from "@/features/marketing/components/sections/FinalCTA";
@@ -24,17 +26,22 @@ const Index = () => {
           "performance marketing agency",
           "social media marketing company",
           "website development services",
+          "adtune",
+          "adtunedigital",
         ]}
+        image="/adtune-logo.jpg"
+        author="AdTune Digital Services"
       />
       <Navbar />
       <main>
         <Hero />
+        <TestimonialSection />
         <StatsBand />
         <Services />
         <Industries />
         <Process />
+        <ProcessReinforcement />
         <WhyUs />
-        <Testimonial />
         <FinalCTA />
       </main>
       <Footer />

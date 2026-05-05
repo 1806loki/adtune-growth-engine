@@ -81,30 +81,32 @@ export function Navbar() {
           </Link>
 
           <ul className="hidden items-center gap-1 md:flex">
-            <li className="relative" onMouseEnter={openDesktopServices} onMouseLeave={closeDesktopServices}>
-              <Link
-                to="/#services"
-                className="flex items-center gap-1 rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Services <ChevronDown className="h-4 w-4" />
-              </Link>
-              <div className="absolute left-0 top-full z-50 w-64 pt-2">
-                <div
-                  className={cn(
-                    "rounded-2xl border border-border bg-surface/95 p-2 shadow-elevated backdrop-blur-xl transition-all duration-200",
-                    servicesOpenDesktop ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
-                  )}
+            <li className="relative">
+              <div onMouseEnter={openDesktopServices} onMouseLeave={closeDesktopServices}>
+                <Link
+                  to="/#services"
+                  className="flex items-center gap-1 rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  {serviceLinks.map((service) => (
-                    <Link
-                      key={service.href}
-                      to={service.href}
-                      className="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm text-foreground transition-colors hover:bg-accent/40"
-                    >
-                      {service.label}
-                      <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                    </Link>
-                  ))}
+                  Services <ChevronDown className="h-4 w-4" />
+                </Link>
+                <div className="absolute left-0 top-full z-50 w-64 pt-2">
+                  <div
+                    className={cn(
+                      "rounded-2xl border border-border bg-surface/95 p-2 shadow-elevated backdrop-blur-xl transition-all duration-200",
+                      servicesOpenDesktop ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
+                    )}
+                  >
+                    {serviceLinks.map((service) => (
+                      <Link
+                        key={service.href}
+                        to={service.href}
+                        className="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm text-foreground transition-colors hover:bg-accent/40"
+                      >
+                        {service.label}
+                        <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </li>
