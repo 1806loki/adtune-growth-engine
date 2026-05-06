@@ -1,5 +1,5 @@
 const stats = [
-  { value: "100+", label: "Clients served" },
+  { value: "30+", label: "Clients served" },
   { value: "4", label: "Core services" },
   { value: "3×", label: "Avg. ROI delivered" },
   { value: "2", label: "Cities — Hyd & Blr" },
