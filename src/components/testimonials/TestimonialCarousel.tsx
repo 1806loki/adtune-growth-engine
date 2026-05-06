@@ -57,7 +57,7 @@ export function TestimonialCarousel({ testimonials, variant = "default" }: Testi
     <div className="relative">
       <div
         ref={scrollRef}
-        className="flex items-stretch gap-6 overflow-x-auto scroll-smooth scroll-snap-x-mandatory pb-4 md:justify-center md:gap-8"
+        className="flex gap-6 overflow-x-auto scroll-smooth scroll-snap-x-mandatory pb-4 md:justify-center md:gap-8"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {testimonials.map((testimonial) => (
